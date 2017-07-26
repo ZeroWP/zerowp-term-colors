@@ -8,10 +8,10 @@ Stable tag: 1.0
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
-Provides an easy interface to assign colors to any term from any taxonomy
+Provides an easy to use interface to assign colors to any term from any taxonomy.
 
 == Description ==
-Provides an easy interface to assign colors to any term from any taxonomy. Then you can use them on front-end using the built-in CSS class or just by calling `get_term_meta`.
+Provides an easy to use interface to assign colors to any term from any taxonomy. Then you can use them on front-end using the built-in CSS class or just by calling `get_term_meta`.
 
 == Frequently Asked Questions ==
 = Do I have to place some code in my theme? =
