@@ -5,7 +5,20 @@ before_install:
   # Now we can install the newer docker-engine which is required for the newer
   # docker-composer we will install next. The messy options are to force it to
   # be non-interactive (normally it asks you a bunch of config questions).
-  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+  - sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+  - sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+
   # Print out the current docker-compose version. Once this reports 1.6+ then we
   # do not need the following steps.
   - docker-compose --version
@@ -22,9 +35,9 @@ before_install:
   - docker-compose --version
   # Setup your application stack. You may need to tweak these commands if you
   # doing out-of-the-ordinary docker-compose builds.
-  - docker-compose pull
-  - docker-compose build
-  - docker-compose start
+  #  - docker-compose pull
+  #  - docker-compose build
+  #  - docker-compose start
   # You will want this for logging. If one of your containers does not build for
   # whatever reason it's best to report that now before your tests start
   # otherwise it can be really tricky to debug why tests are failing sometimes.
@@ -32,4 +45,4 @@ before_install:
   # This is just our script to setup all the database tables and other fixtures
   # we need. You should remove this if it's not necessary or you have other
   # scripts handling this.
-#  - docker/web/provision.sh
+  #  - docker/web/provision.sh
