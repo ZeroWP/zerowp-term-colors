@@ -28,7 +28,7 @@ services:
         define('FS_METHOD', 'direct');
     volumes:
       - "./wordpress/:/var/www/html"
-      - "./dist/:/var/www/html/wp-content/themes/zerowp-term-colors"
+      - "./dist/:/var/www/html/wp-content/plugins/zerowp-term-colors"
       - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'
       - "./server/log/:/var/log"
   phpmyadmin:
