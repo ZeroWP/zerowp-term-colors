@@ -4,31 +4,17 @@
 svn co $SVN_REPOSITORY ./svn
 
 # 2. Copy git repository contents to SNV trunk/ directory
-rsync \
---exclude svn \
---exclude assets \
---exclude deploy \
---exclude .git \
---exclude .travis.yml \
--vaz ./src/* ./svn/trunk/
-rsync -vaz ./assets ./svn/
+cp -R ./src/* ./svn/trunk/
+cp -R ./assets/* ./svn/assets/
 
 # 3. Switch to SVN repository
-cd svn
+cd ./svn/
 
-# 4. Make sure everything is fully committed
-svn add --force trunk
-svn add --force assets
+# 7. Create SVN tag
+svn cp trunk tags/$TRAVIS_TAG
 
-# 5. Create SVN tag
-svn cp \
-trunk tags/$TRAVIS_TAG \
---username $SVN_USERNAME \
---password $SVN_PASSWORD
-
-# 6. Push SVN tag
-svn ci \
---message "Release $TRAVIS_TAG" \
---username $SVN_USERNAME \
---password $SVN_PASSWORD \
---non-interactive
+# 8. Push SVN tag
+svn ci  --message "Release $TRAVIS_TAG" \
+        --username $SVN_USERNAME \
+        --password $SVN_PASSWORD \
+        --non-interactive
