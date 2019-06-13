@@ -18,7 +18,6 @@ deploy:
   # Use script as a deployment tool
   provider: script
   script: sh ./deploy.sh
-  skip_cleanup: true
   # Restrict deployment only for tags
   on:
     tags: true
