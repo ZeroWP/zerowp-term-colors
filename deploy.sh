@@ -17,7 +17,11 @@ cp -R ./wp_org/assets/* ./svn/assets
 # 3. Switch to SVN repository
 cd ./svn
 
-svn add trunk/*
+svn add trunk/* --force \
+        --username ${SVN_USERNAME} \
+        --password ${SVN_PASSWORD} \
+        --non-interactive
+        
 svn ci  --message "Release $TRAVIS_TAG" \
         --username ${SVN_USERNAME} \
         --password ${SVN_PASSWORD} \
