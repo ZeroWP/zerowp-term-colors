@@ -2,6 +2,8 @@ language: php
 php:
   - "7.0"
 
+sudo: true
+
 script:
   # Override default Travis script action [phpunit]
   - php -l ./src/*.php
@@ -15,7 +17,8 @@ branches:
 deploy:
   # Use script as a deployment tool
   provider: script
-  script: deploy.sh
+  script: sh ./deploy.sh
+  skip_cleanup: true
   # Restrict deployment only for tags
   on:
     tags: true
