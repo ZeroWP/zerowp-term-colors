@@ -12,7 +12,7 @@ svn co "https://plugins.svn.wordpress.org/$PLUGIN_SLUG" ./svn
 
 # 2. Copy git repository contents to SNV trunk/ directory
 cp -R ./src/* ./svn/trunk/
-cp -R ./wp_org/* ./svn/assets/
+cp -R ./wp_org/* ./svn/
 
 # 3. Switch to SVN repository
 cd ./svn/
