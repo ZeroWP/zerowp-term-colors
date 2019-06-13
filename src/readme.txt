@@ -3,7 +3,7 @@ Contributors: _smartik_
 Donate link: https://paypal.me/zerowp
 Tags: term, taxonomy, color, ui, interface
 Requires at least: 4.7
-Tested up to: 4.8
+Tested up to: 5.2
 Stable tag: __STABLE_TAG__
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt

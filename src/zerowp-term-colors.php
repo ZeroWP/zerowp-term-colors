@@ -10,7 +10,7 @@
  * Text Domain: zerowp-term-colors
  * Domain Path: /languages
  *
- * Version:     1.0
+ * Version:     __STABLE_TAG__
  * 
  */
 

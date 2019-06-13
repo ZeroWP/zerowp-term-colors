@@ -5,6 +5,7 @@ PLUGIN_SLUG="${PWD##*/}"
 echo "https://plugins.svn.wordpress.org/$PLUGIN_SLUG"
 
 sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/readme.txt
+sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/zerowp-term-colors.php
 
 # 1. Clone complete SVN repository to separate directory
 svn co "https://plugins.svn.wordpress.org/$PLUGIN_SLUG" ./svn
