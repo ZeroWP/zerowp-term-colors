@@ -23,4 +23,9 @@ svn ci  --message "Release $TRAVIS_TAG" \
         --password ${SVN_PASSWORD} \
         --non-interactive
 
-svn copy https://plugins.svn.wordpress.org/${PLUGIN_SLUG}/trunk https://plugins.svn.wordpress.org/${PLUGIN_SLUG}/tags/${TRAVIS_TAG} -m "Release ${TRAVIS_TAG}"
+svn copy https://plugins.svn.wordpress.org/${PLUGIN_SLUG}/trunk \
+        https://plugins.svn.wordpress.org/${PLUGIN_SLUG}/tags/${TRAVIS_TAG} \
+        -m "Release ${TRAVIS_TAG}"
+        --username ${SVN_USERNAME} \
+        --password ${SVN_PASSWORD} \
+        --non-interactive
