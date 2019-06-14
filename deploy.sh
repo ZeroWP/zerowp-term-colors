@@ -14,13 +14,9 @@ cd ./svn
 svn add --force trunk
 svn add --force assets
 
-svn cp trunk tags/$TRAVIS_TAG  \
-        --message "Release $TRAVIS_TAG" \
-        --username $SVN_USERNAME \
-        --password $SVN_PASSWORD \
-        --non-interactive
+svn cp trunk tags/$TRAVIS_TAG
 
-svn add --force tags/$TRAVIS_TAG
+svn add --force tags
 
 svn ci  --message "Release $TRAVIS_TAG" \
         --username $SVN_USERNAME \
