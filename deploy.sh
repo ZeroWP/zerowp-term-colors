@@ -4,7 +4,7 @@ PLUGIN_SLUG="${PWD##*/}"
 
 sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/readme.txt
 sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/${PWD##*/}.php
-svn co "https://plugins.svn.wordpress.org/$PLUGIN_SLUG" ./svn  --depth immediates
+svn co "https://plugins.svn.wordpress.org/$PLUGIN_SLUG" ./svn
 cp -R ./src/* ./svn/trunk
 cp -R ./wp_org/assets/* ./svn/assets
 
