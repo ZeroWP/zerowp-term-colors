@@ -31,15 +31,7 @@ function ztcolors_config($key = false)
         'min_php_version'  => '5.3',
 
         // The list of required plugins. 'slug' => array 'name and uri'
-        'required_plugins' => [
-            // 'test' => array(
-            // 	'plugin_name' => 'Test',
-            // 	'plugin_uri' => 'http://example.com/'
-            // ),
-            // 'another-test' => array(
-            // 	'plugin_name' => 'Another Test',
-            // ),
-        ],
+        'required_plugins' => [],
 
         // The priority in plugins loaded. Only if has required plugins
         'priority'         => 10,
