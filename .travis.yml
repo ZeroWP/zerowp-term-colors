@@ -7,6 +7,11 @@ sudo: true
 script:
   # Override default Travis script action [phpunit]
   - php -l ./src/*.php
+  - sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/readme.txt
+  - sed -i -e "s/__STABLE_TAG__/$TRAVIS_TAG/g" ./src/${PWD##*/}.php
+  - svn co "https://plugins.svn.wordpress.org/$PLUGIN_SLUG" ./svn  --depth immediates
+  - cp -R ./src/* ./svn/trunk
+  - cp -R ./wp_org/assets/* ./svn/assets
 
 branches:
   only:
