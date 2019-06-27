@@ -1,9 +1,9 @@
 <?php
 /* 
- * Plugin Name: ZeroWP Term Colors
- * Plugin URI:  http://zerowp.com/term-colors
- * Description: Provides an easy to use interface to assign colors to any term from any taxonomy.
- * Author:      ZeroWP Team
+ * Plugin Name: Custom Term Colors
+ * Plugin URI:  http://zerowp.com/custom-term-colors
+ * Description: Easy user interface to assign colors to any term from any taxonomy.
+ * Author:      Andrei Surdu
  * Author URI:  http://zerowp.com/
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
